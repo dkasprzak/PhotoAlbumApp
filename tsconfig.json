@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "typeRoots": ["node_modules/@types"],
     "lib": [
       "dom",
       "dom.iterable",
@@ -18,10 +19,17 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",  
-    "strictNullChecks": false
+    "jsx": "preserve",
+    "strictNullChecks": false,
+    "types": [
+      // allows webpack module.hot
+      "webpack-env"
+    ]
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }
